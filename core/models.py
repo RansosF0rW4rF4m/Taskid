@@ -6,26 +6,10 @@ from rest_framework.exceptions import ValidationError
 # Create your models here.
 
 class ModelBase(models.Model):
-    id = models.BigAutoField(
-        db_column='id',
-        null=False,
-        primary_key=True
-    )
-    created_at = models.DateTimeField(
-        db_column='dt_created',
-        auto_now_add=True,
-        null=True
-    )
-    modified_at = models.DateTimeField(
-        db_column='dt_modified',
-        auto_now=True,
-        null=True
-    )
-    active = models.BooleanField(
-        db_column='cs_active',
-        null=False,
-        default=True
-    )
+    id = models.BigAutoField( db_column='id', null=False, primary_key=True )
+    created_at = models.DateTimeField( db_column='dt_created', auto_now_add=True, null=True )
+    modified_at = models.DateTimeField( db_column='dt_modified', auto_now=True, null=True )
+    active = models.BooleanField( db_column='cs_active', null=False, default=True )
 
     class Meta:
         abstract = True
